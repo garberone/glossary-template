@@ -31,7 +31,7 @@ function createUpdateGlossaryParameters(intervalValue) {
     //getting the good Json form
     var jsonData;
     if (mode == 'create') {
-        jsonData = "{\"children\":{\"glossarySettings\":{\"name\":\"glossarySettings\",\"type\":\"glsnt:glossaryAdministration\",\"properties\":{\"pathTxt\":{\"value\":\"" + $('#pathTxt').val() + "\"}}}}}";
+        jsonData = "{\"children\":{\"glossarySettings\":{\"name\":\"glossarySettings\",\"type\":\"glsnt:glossaryAdministration\",\"properties\":{\"pathTxt\":{\"value\":\"" + $('#dictionaryPathTxt').val() + "\"}}}}}";
     }
     else {
         jsonData = "{\"properties\":{\"pathTxt\":{\"value\":\"" + $('#dictionaryPathTxt').val()  + "\"}}}";

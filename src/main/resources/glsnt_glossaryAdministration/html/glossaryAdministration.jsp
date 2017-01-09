@@ -26,6 +26,8 @@
 <template:addResources type="javascript" resources="jquery-ui.min.js,jquery.blockUI.js,workInProgress.js"/>
 <template:addResources type="javascript" resources="GlossaryAdministrationUtils.js"/>
 
+
+
 <template:addResources>
     <script type="text/javascript">
         var intervalValue;
@@ -34,7 +36,7 @@
         var jcrPathTxt = '${functions:escapeJavaScript(pathTxt)}';
 
 
-        var readUrl = API_URL + "/live/${renderContext.UILocale}/paths${renderContext.site.path}/glossarySettings";
+        var readUrl = API_URL + "/${renderContext.liveMode ? 'live' : 'default'}/${renderContext.UILocale}/paths${renderContext.site.path}/glossarySettings";
         <c:choose>
             <c:when test="${empty glossarySettings}">
                 var mode = 'create';

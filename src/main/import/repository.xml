@@ -27,6 +27,28 @@
                 <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
                     <files jcr:primaryType="jnt:folder"/>
                     <contents jcr:primaryType="jnt:contentFolder"/>
+                    <site-settings-base j:hiddenTemplate="false"
+                                j:view="siteSettings"
+                                jcr:primaryType="jnt:template">
+                        <glossary-template j:applyOn="jnt:virtualsite"
+                                  j:defaultTemplate="false"
+                                  j:hiddenTemplate="false"
+                                  j:view="default"
+                                  jcr:primaryType="jnt:contentTemplate">
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Glossary Template"/>
+                            <pagecontent jcr:primaryType="jnt:contentList">
+                                <glosssary-administration jcr:primaryType="glsnt:glossaryAdministration">
+                                    <j:translation_en jcr:language="en"
+                                          jcr:mixinTypes="mix:title"
+                                          jcr:primaryType="jnt:translation"
+                                          jcr:title="Glosssary Administration"/>
+                                </glosssary-administration>
+                            </pagecontent>
+                        </glossary-template>
+                    </site-settings-base>
                 </templates>
                 
             </glossary-template>

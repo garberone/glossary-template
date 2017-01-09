@@ -19,24 +19,46 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 
-<div>
-  <h3>${currentNode.properties['keyword'].string}</h3>
-</div>
+<template:addResources type="css" resources="glossary-template.css" />
 
-
-<div>
-  <h3>${currentNode.properties['description'].string}</h3>
-</div>
-
-
-<c:if test="${not empty currentNode.properties['imageUrl']}">
-  <div>
-    <span>${currentNode.properties['imageUrl'].string}</span>
+<div class="dictionaty-item" id="${fn:trim(fn:toLowerCase(currentNode.properties['keyword'].string))}">
+  <div class="dictionary-title">
+    ${currentNode.properties['keyword'].string}
   </div>
-</c:if>
 
-<c:if test="${not empty currentNode.properties['videoUrl']}">
-  <div>  
-    <span>${currentNode.properties['videoUrl'].string}</span>
-  </div>
-</c:if>
+  <c:if test="${not empty currentNode.properties['description']}">
+    <div class="dictionary-description">${currentNode.properties['description'].string}</div>
+  </c:if>
+
+  <c:choose>
+    <c:when test="${renderContext.editMode}">
+      <c:if test="${not empty currentNode.properties['imageUrl']}">
+        <div class="dictionary-image-url"><a href="${currentNode.properties['imageUrl'].string}" >${currentNode.properties['imageUrl'].string}</a> </div>
+      </c:if>
+
+      <c:if test="${not empty currentNode.properties['videoUrl']}">
+        <div class="dictionary-video-url"><a href="${currentNode.properties['videoUrl'].string}">${currentNode.properties['videoUrl'].string}</a></div>
+      </c:if>
+    </c:when>
+    <c:otherwise>
+
+      <c:if test="${not empty currentNode.properties['imageUrl']}">
+        <div class="dictionary-image-url">
+          <img src="${currentNode.properties['imageUrl'].string}"  alt=" " />
+        </div>
+      </c:if>
+
+      <c:if test="${not empty currentNode.properties['videoUrl']}">
+        <div class="dictionary-video-url">
+          <iframe width="854" height="480" src="${currentNode.properties['videoUrl'].string}" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </c:if>
+    </c:otherwise>
+  </c:choose>
+
+
+
+
+
+
+</div>

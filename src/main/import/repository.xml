@@ -25,14 +25,25 @@
                 <files jcr:primaryType="jnt:folder"/>
                 <contents jcr:primaryType="jnt:contentFolder"/>
                 <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
-                    <files jcr:primaryType="jnt:folder"/>
+                    <files jcr:primaryType="jnt:folder">
+                        <glossary16.png j:height="16"
+                               j:width="16"
+                               jcr:mixinTypes="jmix:image"
+                               jcr:primaryType="jnt:file">
+                            <jcr:content jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            <thumbnail jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                            <thumbnail2 jcr:mimeType="image/png" jcr:primaryType="jnt:resource"/>
+                        </glossary16.png>
+                    </files>
                     <contents jcr:primaryType="jnt:contentFolder"/>
                     <site-settings-base j:hiddenTemplate="false"
+                                j:icon="/modules/glossary-template/templates/files/glossary16.png"
                                 j:view="siteSettings"
                                 jcr:primaryType="jnt:template">
                         <glossary-template j:applyOn="jnt:virtualsite"
                                   j:defaultTemplate="false"
                                   j:hiddenTemplate="false"
+                                  j:icon="/modules/glossary-template/templates/files/glossary16.png"
                                   j:view="default"
                                   jcr:primaryType="jnt:contentTemplate">
                             <j:translation_en jcr:language="en"

@@ -12,3 +12,6 @@
 [glsnt:glossaryAdministration] > jnt:content, mix:title, jmix:studioOnly, jmix:siteComponent
  - pathTxt (string)
 
+[glsnt:glossary] > jnt:content, mix:title, jmix:structuredContent
+ - documentation (string, richtext)
+

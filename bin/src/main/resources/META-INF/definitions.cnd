@@ -1,0 +1,19 @@
+<glsnt = 'http://www.jahia.org/jahia/glsnt/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
+
+[glsnt:dictionaryItem] > jnt:content, jmix:structuredContent
+ - keyword (string) mandatory
+ - description (string, textarea) mandatory
+ - imageUrl (string)
+ - videoUrl (string)
+
+[glsnt:glossaryAdministration] > jnt:content, mix:title, jmix:studioOnly, jmix:siteComponent
+ - pathTxt (string)
+
+[jnt:general] > jnt:content, mix:title, jmix:structuredContent
+ - documentation (string, richtext)
+ - keywords (string, choicelist[sortableFieldnames])
+ - document (string, textarea)
+

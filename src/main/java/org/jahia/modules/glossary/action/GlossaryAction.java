@@ -46,10 +46,11 @@ public class GlossaryAction extends Action {
             if (StringUtils.isEmpty(req.getParameter("keyword"))) 
                 throw new Exception("The parameter keyword is missing and is required.");
             
-            /* returns the specific report specified by the reportId parameter */
+            /* getting the parameters */
             String path = req.getParameter("path");
             String keyword = req.getParameter("keyword").toLowerCase();
-   
+
+            /* returns the specific information if the keyword exists parameter */
             return new ActionResult(HttpServletResponse.SC_OK, "", getKeywordFromCache(session, keyword, path));
 
         }  catch (Exception ex) {
@@ -82,13 +83,10 @@ public class GlossaryAction extends Action {
      *
      * @param session {@link JCRSessionWrapper}
      * @param strQuery @String
-     * @return {@link itemMap}
+     * @return itemMap
      * @throws JSONException
      */
     private Map<String, String> callQuery(JCRSessionWrapper session, String strQuery) throws JSONException {
-    	
-    	//JSONArray jarray = new JSONArray();
-    	//JSONObject jobject = null;
     	JCRNodeWrapper nodeItem = null;
     	Map<String, String> itemMap = new HashMap<>();
     			
@@ -143,7 +141,6 @@ public class GlossaryAction extends Action {
     	String today = dateFormat.format(new Date());
     	JSONObject jObj = new JSONObject();
     	try {
-    	
 	    	if( glossaryCacheMap == null || !glossaryCacheMap.containsKey("registerDate")){
 	    		glossaryCacheMap = new HashMap<>();
 	    		glossaryCacheMap.put("registerDate", today);
